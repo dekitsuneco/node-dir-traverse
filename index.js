@@ -10,5 +10,14 @@ const traverse = dir => {
     .statSync(dir)
     .isDirectory()
     && fs.readdirSync(dir);
-}
 
+  if (subdirs) {
+    console.log('.. Traversing', dir);
+
+    subdirs.forEach(subdir => {
+      const fullPath = join(dir, subdir);
+
+      traverse(fullPath);
+    });
+  }
+};
