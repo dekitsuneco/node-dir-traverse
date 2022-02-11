@@ -21,3 +21,5 @@ const traverse = dir => {
     });
   }
 };
+
+traverse(process.cwd());
